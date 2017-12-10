@@ -19,4 +19,4 @@ Some tips that should be noted:
 - To delete the entire calculation, simply **hold** the `DEL` button
 - Decimals are floored at 12th decimal
 
-![Desktop emulation](./Screenshot,png "Desktop emulation")
+![Desktop emulation](./Screenshot.png)
