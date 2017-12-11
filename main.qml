@@ -66,11 +66,15 @@ Window {
                 _error = false
             } else {
                 display_text.text += ch
+                display_text.scale()
             }
         }
 
         function deleteAtCursor() {
             if (_error) {
+                if (display_text.cursorPosition == 0) {
+                    display_text.focus = false;
+                }
                 clear()
                 _error = false
             } else {
@@ -78,6 +82,7 @@ Window {
                     display_text.focus = false;
                 }
                 display_text.remove(display_text.cursorPosition - 1, display_text.cursorPosition)
+                display_text.scale()
             }
         }
 
@@ -87,11 +92,13 @@ Window {
                 _error = false
             } else {
                 display_text.text = display_text.text.substring(0, display_text.text.length - 1)
+                display_text.scale()
             }
         }
 
         function replaceLastChar(ch) {
             display_text.text = display_text.text.substring(0, display_text.text.length - 1) + ch
+            display_text.scale()
         }
 
         function error(msg) {
@@ -131,15 +138,13 @@ Window {
 
             font.pointSize: 0.00004 * (win.height * win.width)
 
-            x: parent.x + 10
-
             /* Scale text to fit into virtual display */
-            onTextChanged: {
+            function scale() {
                 while(true) {
-                    if (font.pointSize > 0.00001 * (win.height * win.width) && width > (display.width - 10)) {
+                    if (font.pointSize > 0.00001 * (win.height * win.width) && width > display.width) {
                         font.pointSize /= 2
                     }
-                    else if (font.pointSize < 0.00004 * (win.height * win.width) && width * 2 <= (display.width-10)) {
+                    else if (font.pointSize < 0.00004 * (win.height * win.width) && width * 2 <= display.width) {
                         font.pointSize *= 2
                     } else {
                         /* Ideal scale */
