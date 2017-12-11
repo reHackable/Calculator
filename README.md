@@ -33,6 +33,6 @@ Some tips that should be noted:
 
 - To delete the entire calculation, simply **hold** the 'DEL' button
 - Decimals are floored at 12th decimal
-- A cursor can be placed and positioned to remove delete
+- A cursor can be placed and positioned either trough the touchscreen or trough the buttons to delete certain parts of the calculation
 
 ![Desktop emulation](./Screenshot.png)
