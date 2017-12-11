@@ -74,11 +74,10 @@ Window {
                 clear()
                 _error = false
             } else {
-                display_text.remove(display_text.cursorPosition - 1, display_text.cursorPosition)
-
-                if (display_text.cursorPosition == 0) {
+                if (display_text.cursorPosition - 1 < 1) {
                     display_text.focus = false;
                 }
+                display_text.remove(display_text.cursorPosition - 1, display_text.cursorPosition)
             }
         }
 
