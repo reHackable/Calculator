@@ -52,6 +52,7 @@ Window {
         /** OO Abstract Display Interface **/
 
         function clear() {
+            display_text.focus = false
             display_text.text = ""
         }
 
@@ -65,6 +66,19 @@ Window {
                 _error = false
             } else {
                 display_text.text += ch
+            }
+        }
+
+        function deleteAtCursor() {
+            if (_error) {
+                clear()
+                _error = false
+            } else {
+                display_text.remove(display_text.cursorPosition - 1, display_text.cursorPosition)
+
+                if (display_text.cursorPosition == 0) {
+                    display_text.focus = false;
+                }
             }
         }
 
@@ -110,7 +124,7 @@ Window {
             return display_text.text.length == 0 // Alternatively we could test the string aswell
         }
 
-        Text {
+        TextInput {
             id: display_text
             text: qsTr("")
 
@@ -317,7 +331,11 @@ Window {
 
                         onClicked: {
                             if (opkey_text.text == "DEL") {
-                                display.deleteLastChar()
+                                if(display_text.focus) {
+                                    display.deleteAtCursor()
+                                } else {
+                                    display.deleteLastChar()
+                                }
                             }
 
                             else if (opkey_text.text === "−" || display.getBufferLen() - offset()) {
