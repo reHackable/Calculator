@@ -4,10 +4,10 @@ QT += qml quick
 CONFIG += c++11
 
 # Un-Comment to compile for desktop
-#DEFINES += "DESKTOP"
+DEFINES += "DESKTOP"
 
 # Comment to compile for desktop
-LIBS += -lqsgepaper
+#LIBS += -lqsgepaper
 
 TARGET = Calculator
 target.path = /usr/bin
