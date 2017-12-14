@@ -13,9 +13,9 @@ make the experience seem bothersome to some users.
 ## Build
 
 The calculator can be build for both [reMarkable](http://remarkablewiki.com/index.php?title=Setting_up_Qt_Creator) and desktop. However,
-as it has primarily been written with the reMarkable in mind, visual looks may look odd.
+as it has primarily been written with the reMarkable in mind, visuals may look odd.
 
-In the upcoming future it is planned to seperate both platforms with a branch each
+In the upcoming future it is planned to separate both platforms with a branch each
 
 ### reMarkable
 The project file under this repository was saved in such a way, that no modification is required to compile it for the reMarkable, that is assuming that the user has created and selected a kit for the reMarkable. If not, then please do so with the help of [this guide](http://remarkablewiki.com/index.php?title=Setting_up_Qt_Creator)
