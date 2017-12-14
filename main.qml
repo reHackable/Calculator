@@ -250,13 +250,20 @@ Window {
                                     } catch(e) {
                                         display.error("Error")
                                     }
+
+                                    opkeys_grid.itemAt(0).children[0].text = "CLR"
                                 }
                             }
 
                             /* Add character to win */
                             else
                             {
-                                display.add(numkey_text.text)
+                                if(opkeys_grid.itemAt(0).children[0].text === "CLR") {
+                                    display.draw(numkey_text.text)
+                                    opkeys_grid.itemAt(0).children[0].text = "DEL"
+                                } else {
+                                    display.add(numkey_text.text)
+                                }
                             }
                         }
                     }
@@ -342,10 +349,19 @@ Window {
                                 }
                             }
 
+                            else if (opkey_text.text == "CLR") {
+                                display.clear()
+                                opkey_text.text = "DEL"
+                            }
+
                             else if (opkey_text.text === "−" || display.getBufferLen() - offset()) {
                                 if (lastCharIsOp() === true) {
                                     display.replaceLastChar(opkey_text.text)
                                 } else {
+                                    if (opkeys_grid.itemAt(0).children[0].text == "CLR") {
+                                        opkeys_grid.itemAt(0).children[0].text = "DEL"
+                                    }
+
                                     display.add(opkey_text.text)
                                 }
                             }
