@@ -23,7 +23,12 @@ The project file under this repository was saved in such a way, that no modifica
 Simply import this project in your Qt Creator IDE and run the application with your reMarkable kit.
 
 ### Desktop
-The build the calculator for your desktop, import the project in your Qt Creator IDE and open the project file. From there, uncomment [this line](https://github.com/reHackable/Calculator/blob/master/Calculator.pro#L7) and comment [this line](https://github.com/reHackable/Calculator/blob/master/Calculator.pro#L10).
+The build the calculator for your desktop, switch to the desktop branch:
+
+```bash
+$ git fetch
+$ git checkout desktop
+```
 
 With this being set, you may compile and execute the application on your desktop system.
 
