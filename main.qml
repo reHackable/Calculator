@@ -32,10 +32,9 @@ import QtQuick.Window 2.2
 Window {
     id: win
     visible: true
-    visibility: "FullScreen"
 
-    height: Screen.height
-    width: Screen.width
+    height: 493
+    width: 451
 
     /* Virtual Display */
     Rectangle {
@@ -136,7 +135,7 @@ Window {
 
             anchors.verticalCenter: parent.verticalCenter
 
-            font.pointSize: 0.00004 * (win.height * win.width)
+            font.pointSize: 0.0004 * (win.height * win.width)
 
             /* Scale text to fit into virtual display */
             function scale() {
@@ -144,7 +143,7 @@ Window {
                     if (font.pointSize > 0.00001 * (win.height * win.width) && width > display.width) {
                         font.pointSize /= 2
                     }
-                    else if (font.pointSize < 0.00004 * (win.height * win.width) && width * 2 <= display.width) {
+                    else if (font.pointSize < 0.0004 * (win.height * win.width) && width * 2 <= display.width) {
                         font.pointSize *= 2
                     } else {
                         /* Ideal scale */
@@ -212,7 +211,7 @@ Window {
                             }
                         }
 
-                        font.pointSize: 0.00001 * (win.height * win.width)
+                        font.pointSize: 0.0001 * (win.height * win.width)
                         anchors.centerIn: parent
                         color: "white"
                     }
@@ -317,7 +316,7 @@ Window {
                         anchors.centerIn: parent
 
                         text: operators[index]
-                        font.pointSize: 0.00001 * (win.height * win.width)
+                        font.pointSize: 0.0001 * (win.height * win.width)
 
                         property var operators: ["DEL", "÷", "×", "−", "+"]
                     }
