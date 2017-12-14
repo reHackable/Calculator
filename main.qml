@@ -354,7 +354,7 @@ Window {
                                 opkey_text.text = "DEL"
                             }
 
-                            else if (opkey_text.text === "−" || display.getBufferLen() - offset()) {
+                            else if (opkey_text.text === "−" || display.getBufferLen() - offset() && !display._error) {
                                 if (lastCharIsOp() === true) {
                                     display.replaceLastChar(opkey_text.text)
                                 } else {
