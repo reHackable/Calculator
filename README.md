@@ -18,7 +18,7 @@ as it has primarily been written with the reMarkable in mind, visuals may look o
 In the upcoming future it is planned to separate both platforms with a branch each
 
 ### reMarkable
-The project file under this repository was saved in such a way, that no modification is required to compile it for the reMarkable, that is assuming that the user has created and selected a kit for the reMarkable. If not, then please do so with the help of [this guide](http://remarkablewiki.com/index.php?title=Setting_up_Qt_Creator)
+The project file under this repository was saved in such a way, that no modification is required to compile it for the reMarkable, that is assuming that the user has created and selected a kit for the reMarkable. If not, then please do so with the help of [this guide](https://remarkablewiki.com/devel/qt_creator)
 
 Simply import this project in your Qt Creator IDE and run the application with your reMarkable kit.
 
